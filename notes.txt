@@ -1,0 +1,36 @@
+Map
+-List of Nodes (Could sort based off of row number and make hashlist to make searching easier)
+-List of Nodes in Rows (Not sure if needed since row is stored in Node class, but could keep to improve lookup runtime)
+-List of Paths
+-
+
+Node
+-Weight
+-Name
+-List of Parent Nodes
+-List of Dependent Nodes
+-Row Number
+
+Path
+-Start Node
+-End Node
+-Weight
+-Name
+
+Runner
+-Import from file
+-Generate random test case
+
+
+Condense rows
+-Get all nodes in row 1
+-Iterate through nodes in row 1, node n
+	-Remove the paths where it is the End Node and save the one with minimum weight
+	-Create partition of paths where n is the Start Node
+	-Iterate through partition, path p
+		-Add path to add list with properties
+			-Start equals start node from saved path
+			-End is same as path p
+			-Weight equals saved path plus weight of p
+			-Name equals name of p plus name of n
+-Iterate through map path list to see if any paths trying to be added have same start and end nodes, pick one with minimum weight
